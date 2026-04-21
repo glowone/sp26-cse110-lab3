@@ -1,3 +1,1 @@
-# Lab 2 - Starter
-
-https://glowone.github.io/Lab2_Starter/
+https://glowone.github.io/sp26-cse110-lab3
