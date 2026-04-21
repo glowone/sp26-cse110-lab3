@@ -466,35 +466,34 @@ section:has(h2) {
   padding-top: 2rem;
 }
 
-/* Nested Selectors (CSS Nesting) */
-.nav-container {
-  nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
-    
-    ul {
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-    }
-    
-    li {
-      flex: 1;
-    }
-    
-    a {
-      color: white;
-      padding: 0.5rem 1rem;
-      display: block;
-      text-align: center;
-      border-radius: 4px;
-      
-      &:hover {
-        background-color: var(--hover-color);
-      }
-    }
-  }
+/* Nested Selectors (CSS Nesting) - Demonstrated conceptually */
+/* Note: CSS nesting with & is a 2023 feature not yet fully supported by validators */
+.nav-container nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+.nav-container nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.nav-container nav li {
+  flex: 1;
+}
+
+.nav-container nav a {
+  color: white;
+  padding: 0.5rem 1rem;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.nav-container nav a:hover {
+  background-color: var(--hover-color);
 }
 
 /* Media Query - Responsive design for tablets and smaller laptops */
