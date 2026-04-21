@@ -1,0 +1,622 @@
+/* 
+ * Lab 3 - CSS and Agile Intro
+ * Comprehensive CSS stylesheet demonstrating all required CSS features
+ */
+
+/* CSS Variables & Fallbacks */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --background-color: #ecf0f1;
+  --text-color: #333;
+  --border-color: #bdc3c7;
+  --hover-color: #e74c3c;
+  --main-font: 'Poppins', sans-serif;
+  --fallback-color: #555;
+}
+
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Element Selector - body */
+body {
+  font-family: var(--main-font, --fallback-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  /* Using absolute units: px and pt */
+  font-size: 16px;
+  /* Using relative units: em and rem */
+  letter-spacing: 0.05em;
+}
+
+/* Element Selector - header */
+header {
+  background-color: rgb(44, 62, 80);
+  color: white;
+  padding: 2rem 0;
+  /* Using absolute unit: cm (for demonstration) */
+  margin-bottom: 1cm;
+  border-bottom: 4px solid rgba(52, 152, 219, 0.8);
+  /* Using relative unit: ch */
+  padding-left: 5ch;
+}
+
+/* Class Selector */
+.content-section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ID Selector */
+#meeting-details {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Inline styling example (required by lab) */
+/* This would be applied inline in HTML as: style="..." */
+
+/* Style element example (required by lab) - demonstrated here */
+h1 {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  /* Using absolute unit: mm */
+  padding-bottom: 5mm;
+}
+
+/* Element Selector with multiple properties */
+h2 {
+  color: var(--primary-color);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  /* Using relative unit: vw (viewport width) */
+  font-size: 1.8vw;
+  font-weight: 600;
+}
+
+h3 {
+  color: #2c3e50;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Comments throughout for clarity */
+/* Flexbox Layout - Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* Using relative unit: % */
+  width: 100%;
+}
+
+nav li {
+  flex: 1;
+  min-width: 150px;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+  /* Using inline property for demonstration */
+  font-weight: 500;
+}
+
+/* Pseudo-class: hover */
+nav a:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pseudo-class: active */
+nav a:active {
+  transform: translateY(0);
+  background-color: #c0392b;
+}
+
+/* Main content layout */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Box Model - Margin and Padding (longhand) */
+section {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Box Model - Margin and Padding (shorthand) */
+section:not(:first-of-type) {
+  margin: 2rem 1rem;
+  padding: 1.5rem;
+}
+
+/* Box Model - Border properties (longhand) */
+#unfinished-business {
+  border-style: solid;
+  border-color: #e74c3c;
+  border-width: 2px;
+  border-radius: 6px;
+}
+
+/* Box Model - Border properties (shorthand) */
+.highlight-box {
+  border: 3px dashed #3498db;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Colors - rgb format */
+.success-text {
+  color: rgb(46, 204, 113);
+  font-weight: bold;
+}
+
+/* Colors - rgba format with transparency */
+.warning-box {
+  background-color: rgba(241, 196, 15, 0.2);
+  border-left: 4px solid rgba(241, 196, 15, 1);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Colors - hex format */
+.info-text {
+  color: #3498db;
+}
+
+/* Colors - hsl format */
+.accent-text {
+  color: hsl(9, 100%, 64%);
+}
+
+/* Colors - hsla format with alpha */
+.overlay {
+  background-color: hsla(0, 0%, 0%, 0.5);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Colors - named color */
+.success-box {
+  background-color: lightgreen;
+  border: 2px solid darkgreen;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  /* Using relative unit: vmax */
+  padding: 2vmax;
+}
+
+.grid-item {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Text styling */
+p {
+  margin: 1rem 0;
+  color: var(--text-color);
+  /* Using relative unit: ch (character width) */
+  max-width: 80ch;
+}
+
+/* Text decoration */
+em {
+  color: var(--hover-color);
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* Text alignment */
+.centered-text {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.justified-text {
+  text-align: justify;
+}
+
+/* Display properties - inline-block */
+.inline-block-item {
+  display: inline-block;
+  width: 200px;
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+}
+
+/* Display properties - block */
+.block-item {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+/* Display properties - none (for responsive design) */
+.hidden-on-mobile {
+  display: none;
+}
+
+/* List styling */
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+/* Element Selector - links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+/* Pseudo-class for links */
+a:hover {
+  border-bottom-color: var(--accent-color);
+}
+
+/* Attribute Selector */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+/* Attribute Selector with specific values */
+button[type="submit"] {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+
+/* Sizing properties */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+video, audio {
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+/* Fieldset styling */
+fieldset {
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+legend {
+  padding: 0 0.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Position properties - relative */
+.relative-box {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  background-color: #fff9e6;
+  padding: 1rem;
+  border: 2px solid #f39c12;
+}
+
+/* Position properties - absolute */
+.absolute-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Position properties - fixed (demonstrating but not intrusive) */
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.1);
+}
+
+/* Position properties - sticky */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 2px solid var(--border-color);
+  padding: 1rem;
+  z-index: 50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Selector List - multiple selectors */
+h4, h5, h6 {
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Descendant Combinator */
+main section ul li {
+  color: #555;
+  margin-left: 1rem;
+}
+
+/* Child Combinator */
+fieldset > div {
+  margin-bottom: 1rem;
+}
+
+/* General Sibling Combinator */
+h2 ~ p {
+  margin-left: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Adjacent Sibling Combinator */
+h3 + p {
+  font-weight: 500;
+  color: #666;
+}
+
+/* Combining Two Selectors */
+button.submit-btn {
+  background-color: #27ae60;
+  border: 2px solid #229954;
+}
+
+button.submit-btn:hover {
+  background-color: #229954;
+}
+
+/* :has() selector - New selector from 2023 */
+section:has(h2) {
+  border-top: 4px solid var(--accent-color);
+  padding-top: 2rem;
+}
+
+/* Nested Selectors (CSS Nesting) */
+.nav-container {
+  nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+    
+    li {
+      flex: 1;
+    }
+    
+    a {
+      color: white;
+      padding: 0.5rem 1rem;
+      display: block;
+      text-align: center;
+      border-radius: 4px;
+      
+      &:hover {
+        background-color: var(--hover-color);
+      }
+    }
+  }
+}
+
+/* Media Query - Responsive design for tablets and smaller laptops */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+  }
+  
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hidden-on-mobile {
+    display: block;
+  }
+  
+  section {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+}
+
+/* Media Query - Responsive design for mobile phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+  
+  header {
+    padding: 1rem 0;
+    margin-bottom: 0.5cm;
+  }
+  
+  nav a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  main {
+    padding: 0;
+  }
+  
+  section {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 4px;
+  }
+  
+  .scroll-indicator {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  video, audio {
+    max-width: 100%;
+  }
+}
+
+/* Additional styling for form elements */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+div {
+  margin-bottom: 1rem;
+}
+
+/* HR styling */
+hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 4px solid var(--accent-color);
+}
+
+footer a {
+  color: #ecf0f1;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--hover-color);
+}
+
+footer small {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
