@@ -1,0 +1,84 @@
+CSS Validation Report - Lab 3
+=============================
+Validation Date: April 21, 2026
+
+CSS CHECKLIST VERIFICATION
+==========================
+
+✓ General CSS Topics
+- ✓ Comments: Multiple comments throughout the stylesheet
+- ✓ Colors:
+  - ✓ rgb() format: rgb(44, 62, 80)
+  - ✓ rgba() format: rgba(52, 152, 219, 0.8)
+  - ✓ Hex codes: #2c3e50, #3498db, #FFF, #FFFFFF
+  - ✓ HSL format: hsl(9, 100%, 64%)
+  - ✓ HSLA format: hsla(0, 0%, 0%, 0.5)
+  - ✓ Named colors: white, lightgreen, darkgreen, orange
+- ✓ CSS Variables & Fallbacks: :root variables with fallback colors demonstrated
+- ✓ Background: background-color and linear-gradient applied throughout
+- ✓ Units:
+  - Relative units (more than 3): em, rem, %, vw, vmax, ch
+  - Absolute units (more than 3): px, pt, cm, mm
+- ✓ Box Model - Margin:
+  - Longhand: margin-top, margin-bottom, margin-left, margin-right
+  - Shorthand: margin: 2rem auto
+  - Auto margins: margin: auto
+- ✓ Box Model - Padding:
+  - Longhand: padding-top, padding-bottom, padding-left, padding-right
+  - Shorthand: padding: 1.5rem
+- ✓ Box Model - Border:
+  - Longhand: border-style, border-color, border-width, border-radius
+  - Shorthand: border: 3px dashed #3498db
+- ✓ Text: color, text-decoration, text-align, text-shadow
+- ✓ Display: block, inline-block, none, flex, grid
+- ✓ Sizing: height, width, max-width, min-width
+- ✓ Position: static, relative, fixed, absolute, sticky
+- ✓ Pseudo-classes: :hover, :active
+
+✓ Layouts
+- ✓ Flexbox: Applied to nav with flex-direction, justify-content, gap
+- ✓ Grid: Applied to .grid-container with grid-template-columns, gap
+
+✓ Responsiveness
+- ✓ Media Queries: Two breakpoints at 768px (tablet) and 480px (mobile)
+- ✓ Layout reflows appropriately for different screen sizes
+
+✓ CSS Selectors
+- ✓ Class Selector (.class): .content-section, .success-text, .warning-box
+- ✓ ID Selector (#id): #meeting-details, #attendance, #agenda
+- ✓ Universal Selector (*): Applied to reset margins/padding
+- ✓ Element Selector (element): body, header, nav, section, h1, h2, etc.
+- ✓ Attribute Selector: input[type="text"], input[type="email"], button[type="submit"]
+- ✓ Pseudo-class Selector: a:hover, nav a:active, section:has(h2)
+- ✓ Selector List (element, element): h4, h5, h6
+- ✓ Combinators:
+  - Descendant: main section ul li
+  - Child: fieldset > div
+  - General Sibling: h2 ~ p
+  - Adjacent Sibling: h3 + p
+- ✓ Combining Two Selectors: button.submit-btn
+- ✓ :has() selector: section:has(h2) - Uses new CSS3 selector from 2023
+- ✓ Nested Selectors: Demonstrated in .nav-container (Note: Requires CSS nesting support)
+
+✓ Fonts
+- ✓ 3rd party font: Google Fonts 'Poppins' imported with multiple font weights
+
+SUMMARY
+=======
+Status: ✓ PASS - All required CSS features implemented
+
+NOTES
+=====
+- The newer selectors (:has() and nested selectors) were adopted in 2023 and may not validate with older W3C validators
+- These are valid CSS3 features and are widely supported in modern browsers
+- For detailed browser compatibility, see caniuse.com for :has() and CSS nesting support
+- The CSS follows best practices with:
+  * External stylesheet (primary)
+  * Inline styles demonstration (within HTML)
+  * Style tag demonstration (within HTML head)
+  * Responsive media queries
+  * CSS variables for maintainability
+  * Comments for code clarity
+  * Proper semantic HTML structure with CSS
+
+Lab 3 CSS implementation meets all requirements and includes comprehensive demonstrations of CSS concepts.
